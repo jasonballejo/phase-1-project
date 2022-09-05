@@ -1,39 +1,49 @@
-*{
-    box-sizing: border-box
+* {
+    box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-}
-
-.leftcolumn {
-    background: rgb(52, 52, 52);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+/* Left Column */
+.left-column{
     float: left;
-    width: 30%;
-    padding: 12px;
+    width: 25%;
+    padding: 13px;
+    min-height: auto;
+    text-align: center;
+    background: rgb(52,52,52);
 }
 
-.leftcolumn h1 {
+.left-column::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left-column h1 {
     margin-top: 30px;
+    margin-bottom: 0;
     font-size: 36px;
     font-family: 'Fira Sans', sans-serif;
     color: #2a75bb;
     text-align: center;
-    letter-spacing: -1px;
-    line-height: -1000px;
+    line-height: 40px;
 }
 
-.leftcolumn h3 {
-    font-size: 16px;
+.left-column h3 {
+    font-size: 12px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 300;
     color: #ffcb05;
-    text-align: center;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
+    margin-top: 0px;
+}
+
+.left-column h4 {
+    margin-top: 20%;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    color: white;
+
 }
 
 .searchcontainer {
@@ -46,16 +56,6 @@ body {
     justify-content: center;
 }
 
-.searchbar {
-    width: 100%;
-    max-width: 700px;
-    background: #b1b1b1;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    /* padding: 5px 5px; */
-}
-
 .searchbar input {
     background: transparent;
     flex: 1;
@@ -63,7 +63,18 @@ body {
     outline: none;
     padding: 16px;
     font-size: 18px;
-    color: #E4E5EA;
+    color: #ffcb05;
+}
+
+.searchbar {
+    /* width: 280px; */
+    max-width: 700px;
+    background: #b1b1b1;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    /* padding: 5px 5px; */
+    margin-top: 60px;
 }
 
 ::placeholder{
@@ -83,29 +94,98 @@ body {
     width: 22px;
 }
 
-.rightcolumn {
-    background: white;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    padding: 12px;
-    padding-left: 350px;
+/* Right Column */
+.right-column{
+    float: left;
+    width: 70%;
+    padding: 13px;
+    min-height: 250px;
+    text-align: center;
 }
 
-.rightcolumn h1 {
-    padding: 12px;
-    font-family: 'Fira Sans', sans-serif;
+.right-column::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.rightcolumn p {
-    padding: 12px;
+/* Flex Box for the Pokemon cards*/
+.flexbox-container {
+    display: flex;
+}
+
+.flexbox-item {
+    width: 200px;
+    margin: 10px;
+    border: 3px solid black;
+    background-color: white;
+}
+
+.flexbox-item-1 {
+    display: flex;
     font-family: 'Fira Sans', sans-serif;
+    border: 2px solid #000000;
+    padding: 18px;
+    box-shadow: 5px 5px 15px 5px #000000;
+    width: 680px;
+    min-height: 50px;
+}
+
+.column-one {
+    width: 30%;
+    min-height: 50px;
+    /* background-color: blue; */
+}
+
+.pokemon_img {
+    width: 180px;
+    height: 140px;
+}
+
+.column-one h3 {
+    font-size: 44px;
+    margin: 0;
+    margin-left: 5%;
+}
+
+.column-one {
+    margin-left: 5%;
+}
+
+.column-two {
+    width: 30%;
+    min-height: 50px;
+    /* background-color: red; */
+}
+
+.column-two h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.column-two p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.column-three {
+    width: 30%;
+    min-height: 50px;
+    /* background-color: green; */
+}
+
+.column-three p {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {
-    .leftcolumn {
+    .left-column {
+        width: 100%;
+    }
+    .right-column {
         width: 100%;
     }
 }
