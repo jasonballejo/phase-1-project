@@ -1,13 +1,9 @@
 This datbase provides you information like the pokemon's height, weight, ablilites and much more.
 
 
-Pokemon artwork credits to "https://pokemondb.net/".
-Fonts added on the page credited to Google Fonts.
-
-
 # PokeDatabase
 
-PokeDatabase is a library of specific Pokemon information when battling in the wild or in tournaments.
+PokeDatabase is a library of specific Pokemon attributes for battling in the wild or in tournaments. This database is to help improve and become victories.
 
 ## Installation
 
@@ -19,7 +15,7 @@ pip install foobar
 
 ## Usage
 
-```python
+```javascript
 import foobar
 
 # returns 'words'
