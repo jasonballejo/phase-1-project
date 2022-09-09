@@ -1,23 +1,11 @@
 const pokeURL = `https://pokeapi.co/api/v2/pokemon`
 let container = document.querySelector('.flexbox-container')
-let form = document.querySelector('.searchbar')
+let form = document.getElementById('searchbar')
 let button = document.querySelector('button')
-// console.log('Without Period:', button)
-
-// fetch: GET
-function getPokeAPI() {
-    fetch(pokeURL)
-    .then(res => res.json())
-    .then(data => data.results.forEach(pokemon => {  
-         fetch(pokemon.url)  
-         .then(res => res.json())  
-         .then(pokeInfo => renderPokemon(pokeInfo))  
-    }))
-    .catch(error => console.error('Error:', error))
-}
 
 // Render Card to DOM
 function renderPokemon(pokemon) {
+    // console.log('LIST POKEMON:', pokemon)
     // create elements
     let divCard = document.createElement('div')
     let divColumnOne = document.createElement('div')
@@ -54,7 +42,7 @@ function renderPokemon(pokemon) {
     h3.textContent = 'Pokemon Stats'
     pNumber.textContent = `Number: ${pokemon.id}`
     pHeight.textContent = `Height: ${pokemon.height}`
-    pWeight.textContent = `Weight: ${pokemon.weight}`
+    pWeight.textContent = `Weight: ${pokemon.weight}lbs`
     pTypes.textContent = `Types: ${pokemon.types[0].type.name}`
         // & ${pokemon.types[1].type.name}`
     pBase.textContent = `Base Stat: ${pokemon.base_experience}`
@@ -79,26 +67,43 @@ function renderPokemon(pokemon) {
     container.append(divCard)
 }
 
-// event listener for form
-// button.addEventListener('click', (e) => {
-//         e.preventDefault()
-//         console.log('Button clicked')
-//     })
+// fetch: GET
+function getPokeAPI(e) {
+    e.preventDefault()
+    fetch(pokeURL)
+    .then(res => res.json())
+    .then(data => data.results.forEach(pokemon => {  
+         fetch(pokemon.url)  
+         .then(res => res.json())  
+         .then(pokeInfo => renderPokemon(pokeInfo))  
+    }))
+    .catch(error => console.error('Error:', error))
+}
 
-// fetch: POST
+// Event Listeners
+
+// submit form
+// form.addEventListener('submit', (e) => getPokeAPI(e))
+
+// button 
+button.addEventListener('click', (e) => postPokemon(e))
+
+// // fetch: POST
 function postPokemon(e) {
     e.preventDefault()
-    console.log('Console Log:', e)
-    fetch('https://pokeapi.co/api/v2/pokemon/6', {
+    fetch(pokeURL, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
       },
       body: JSON.stringify(e)
-  })
-    .then(res => res.json())
-    .then(data => renderPokemon(data))
-  }
+    })
+    .then(data => data.results.forEach(pokemon => {  
+        fetch(pokemon.url)  
+        .then(res => res.json())  
+        .then(pokeInfo => renderPokemon(pokeInfo))
+    })
+    .catch(error => console.error('Error:', error))
 
-  form.addEventListener('submit', (e) => postPokemon(e))
+  )}
