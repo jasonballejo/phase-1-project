@@ -36,7 +36,8 @@ function renderPokemon(pokemon) {
 
     // column-one
     h2.textContent = pokemon.name
-    img.className = 'pokemon_img' // come back to this
+    img.className = 'pokemon_img' 
+    img.src = "/poke_images/Charizard.jpeg" // come back to this
     
     // column-two
     h3.textContent = 'Pokemon Stats'
@@ -60,7 +61,7 @@ function renderPokemon(pokemon) {
         // & ${pokemon.abilities[1].ability.name}`
     
     //add content to the DOM
-    divColumnOne.append(h2)
+    divColumnOne.append(h2, img)
     divColumnTwo.append(h3, pNumber, pHeight, pWeight, pTypes, pBase, pMoves)
     divColumnThree.append(pHP, pAttack, pDefense, pSA, pSD, pSpeed, pAbility)
     divCard.append(divColumnOne, divColumnTwo, divColumnThree)
@@ -83,27 +84,12 @@ function getPokeAPI(e) {
 // Event Listeners
 
 // submit form
-// form.addEventListener('submit', (e) => getPokeAPI(e))
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    let nameSearch = document.getElementById('search').value
+    
+})
 
 // button 
-button.addEventListener('click', (e) => postPokemon(e))
-
-// // fetch: POST
-function postPokemon(e) {
-    e.preventDefault()
-    fetch(pokeURL, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify(e)
-    })
-    .then(data => data.results.forEach(pokemon => {  
-        fetch(pokemon.url)  
-        .then(res => res.json())  
-        .then(pokeInfo => renderPokemon(pokeInfo))
-    })
-    .catch(error => console.error('Error:', error))
-
-  )}
+// button.addEventListener('click', (e) => getPokeAPI(e))
