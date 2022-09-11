@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;600&display=swap" rel="stylesheet">
@@ -17,43 +16,24 @@
             <h1>WELCOME TO THE</br> POKEMON DATABASE</h1>
             <h3>Battle with trainers with confidence</h3>
             <div class="search-container">
-                <form id="searchbar">
-                    <input type="text" id="search" placeholder="search pokemon" name="name">
-                    <button type='submit' class="btn"><img src="/extra_images/searchicon.png"></button>
-                </form>
+                    <div class="searchBox">
+                    <input id="pokemonName" type="text" placeholder="Search Pokemon">
+                    <button id="search">🔍</button>
+                    </div>
             <h4>Created by Jason Ballejo for Flatiron school</h4>
             </div>
         </div>
         <div class="right-column">
-            <div class="flexbox-container">
-                <!-- <div class="flexbox-item flexbox-item-1"> 
-                    <div class="column-one">
-                        <h2>Charizard</h2> 
-                        <img class="pokemon_img" src="/poke_images/charizard.jpeg">
-                    </div>
-    
-                    <div class="column-two">
-                        <h3>Pokemon Stats</h3>
-                        <p>Number:</p>
-                        <p>Height:</p>
-                        <p>Weight:</p>
-                        <p>Types:</p>
-                        <p>Base Stat:</p>
-                        <p>Moves</p>
-                    </div>
-                    <div class="column-three">
-                        <p>HP:</p>                 
-                        <p>Attack:</p>
-                        <p>Defense:</p>
-                        <p>Special-Attack:</p>
-                        <p>Special-Defense:</p>
-                        <p>Speed:</p>
-                        <p>Ability:</p>
-                    </div>
-                </div> -->
+            <div class="flexbox-container"> 
+            <!-- Pokemon card will go here -->
             </div>
+
+            <div>
+                <img src="/images/blastoise.jpeg" id="theimage">
+            </div>
+
         </div>
     </div> 
-    
+    <script src="index.js"></script>
     </body>
 </html>

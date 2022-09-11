@@ -1,95 +1,72 @@
-const pokeURL = `https://pokeapi.co/api/v2/pokemon`
+const pokeURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 let container = document.querySelector('.flexbox-container')
-let form = document.getElementById('searchbar')
-let button = document.querySelector('button')
+let input = document.querySelector('#pokemonName')
 
-// Render Card to DOM
-function renderPokemon(pokemon) {
-    // console.log('LIST POKEMON:', pokemon)
-    // create elements
-    let divCard = document.createElement('div')
-    let divColumnOne = document.createElement('div')
-    let divColumnTwo = document.createElement('div')
-    let divColumnThree = document.createElement('div')
-    let h3 = document.createElement('h3')
-    let h2 = document.createElement('h2')
-    let img = document.createElement('img')
-    let pNumber = document.createElement('p')
-    let pHeight = document.createElement('p')
-    let pWeight = document.createElement('p')
-    let pTypes = document.createElement('p')
-    let pBase = document.createElement('p')
-    let pMoves = document.createElement('p')
-    let pHP = document.createElement('p')
-    let pAttack = document.createElement('p')
-    let pDefense = document.createElement('p')
-    let pSA = document.createElement('p')
-    let pSD = document.createElement('p')
-    let pSpeed = document.createElement('p')
-    let pAbility = document.createElement('p')
+// Event Listeners
+document.querySelector('#search').addEventListener('click', renderPokemon)
 
-    // add Content
-    divCard.className = 'flexbox-item flexbox-item-1'
-    divColumnOne.className = 'column-one'
-    divColumnTwo.className = 'column-two'
-    divColumnThree.className = 'column-three'
+// Update word cases
+function lowerCaseName(string){
+    return string.toLowerCase()
+}
 
-    // column-one
-    h2.textContent = pokemon.name
-    img.className = 'pokemon_img' 
-    img.src = "/poke_images/Charizard.jpeg" // come back to this
-    
-    // column-two
-    h3.textContent = 'Pokemon Stats'
-    pNumber.textContent = `Number: ${pokemon.id}`
-    pHeight.textContent = `Height: ${pokemon.height}`
-    pWeight.textContent = `Weight: ${pokemon.weight}lbs`
-    pTypes.textContent = `Types: ${pokemon.types[0].type.name}`
-        // & ${pokemon.types[1].type.name}`
-    pBase.textContent = `Base Stat: ${pokemon.base_experience}`
-    pMoves.textContent = `Moves: ${pokemon.moves[0].move.name}` 
-        // & ${pokemon.moves[1].move.name}`
-
-    // column-three
-    pHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
-    pAttack.textContent = `Attack: ${pokemon.stats[1].base_stat}`
-    pDefense.textContent = `Defense: ${pokemon.stats[2].base_stat}`
-    pSA.textContent = `Special-Attack: ${pokemon.stats[3].base_stat}`
-    pSD.textContent = `Special-Defense: ${pokemon.stats[4].base_stat}`
-    pSpeed.textContent = `Speed: ${pokemon.stats[5].base_stat}`
-    pAbility.textContent = `Ability: ${pokemon.abilities[0].ability.name}`
-        // & ${pokemon.abilities[1].ability.name}`
-    
-    //add content to the DOM
-    divColumnOne.append(h2, img)
-    divColumnTwo.append(h3, pNumber, pHeight, pWeight, pTypes, pBase, pMoves)
-    divColumnThree.append(pHP, pAttack, pDefense, pSA, pSD, pSpeed, pAbility)
-    divCard.append(divColumnOne, divColumnTwo, divColumnThree)
-    container.append(divCard)
+function capFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 // fetch: GET
-function getPokeAPI(e) {
+function renderPokemon(e) {
+    const name = input.value
+    const pokemonName = lowerCaseName(name)
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+     .then(response => response.json())
+     .then((data) => {
+        document.querySelector('.flexbox-container').innerHTML = `
+    
+    <div class="flexbox-item flexbox-item-1">
+    <div class="column-one">
+        <h2>${capFirstLetter(data.name)}</h2> 
+        <img id="pokeImage" src="${data.sprites.other["official-artwork"].front_default}">
+    </div>
+    
+    <div class="column-two">
+        <h3>Pokemon Stats</h3>
+        <p>Number: ${data.id}</p>
+        <p>Height: ${data.height} feet</p>
+        <p>Weight: ${data.weight} lbs</p>
+        <p>Type: ${capFirstLetter(data.types[0].type.name)}</p>
+        <p>Base Stat: ${data.base_experience}</p>
+        <p>Moves: ${capFirstLetter(data.moves[0].move.name)} & ${capFirstLetter(data.moves[1].move.name)}</p>
+    </div>
+
+    <div class="column-three">
+        <p>HP: ${data.stats[0].base_stat}</p>                 
+        <p>Attack: ${data.stats[1].base_stat}</p>
+        <p>Defense: ${data.stats[2].base_stat}</p>
+        <p>Special-Attack: ${data.stats[3].base_stat}</p>
+        <p>Special-Defense: ${data.stats[4].base_stat}</p>
+        <p>Speed: ${data.stats[5].base_stat}</p>
+        <p>Ability: ${capFirstLetter(data.abilities[0].ability.name)} & ${capFirstLetter(data.abilities[1].ability.name)}</p>
+    </div>
+    `
+     })
+     .catch((error) => {
+        console.log("Pokemon Not Found", error)
+    })
+
     e.preventDefault()
-    fetch(pokeURL)
-    .then(res => res.json())
-    .then(data => data.results.forEach(pokemon => {  
-         fetch(pokemon.url)  
-         .then(res => res.json())  
-         .then(pokeInfo => renderPokemon(pokeInfo))  
-    }))
-    .catch(error => console.error('Error:', error))
+
 }
 
-// Event Listeners
+document.getElementById('theimage').addEventListener('mouseover', () => {
+    console.log('hello')
+});
 
-// submit form
-form.addEventListener('submit', function(e) {
-    e.preventDefault()
+document.getElementById('theimage').addEventListener('mouseout', () => {
+    document.getElementById('theimage').src="/images/blastoise.jpeg"
+});
 
-    let nameSearch = document.getElementById('search').value
-    
-})
-
-// button 
-// button.addEventListener('click', (e) => getPokeAPI(e))
+document.querySelector('.pokeImage').addEventListener('mouseover', () => {
+    console.log('hello')
+});
