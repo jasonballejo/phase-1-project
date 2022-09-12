@@ -1,6 +1,3 @@
-This datbase provides you information like the pokemon's height, weight, ablilites and much more.
-
-
 # PokeDatabase
 
 PokeDatabase is a library of specific Pokemon attributes for battling in the wild or in tournaments. This database is to help improve and become victories.

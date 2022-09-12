@@ -5,6 +5,13 @@ let input = document.querySelector('#pokemonName')
 // Event Listeners
 document.querySelector('#search').addEventListener('click', renderPokemon)
 
+// enter key to searchbar
+input.addEventListener('keyup', (e) => {
+    if(e.keyCode === 13) {
+        return renderPokemon(e.target.value)
+    }
+})
+
 // Update word cases
 function lowerCaseName(string){
     return string.toLowerCase()
@@ -55,18 +62,18 @@ function renderPokemon(e) {
         console.log("Pokemon Not Found", error)
     })
 
-    e.preventDefault()
-
+    // e.preventDefault()
 }
 
-document.getElementById('theimage').addEventListener('mouseover', () => {
-    console.log('hello')
-});
+// document.getElementById('pokeImage').addEventListener('mouseover', (e) => {
+//     const target = e
+//     console.log('hello:', target)
+// });
 
-document.getElementById('theimage').addEventListener('mouseout', () => {
-    document.getElementById('theimage').src="/images/blastoise.jpeg"
-});
+// document.getElementById('theimage').addEventListener('mouseout', () => {
+//     document.getElementById('theimage').src="/images/wartortle.jpeg"
+// });
 
-document.querySelector('.pokeImage').addEventListener('mouseover', () => {
-    console.log('hello')
-});
+// document.querySelector('h2').addEventListener('mouseover', () => {
+//     console.log('hello')
+// });
