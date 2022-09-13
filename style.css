@@ -187,6 +187,13 @@
     margin-top: 11px;
 }
 
+.flexbox-container2 h4 {
+    padding-right: 30%;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
     .left-column {
         width: 100%;
@@ -194,8 +201,4 @@
     .right-column {
         width: 100%;
     }
-}
-
-#theimage {
-    width: 180px;
 }

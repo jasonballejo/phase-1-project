@@ -3,6 +3,7 @@ let container = document.querySelector('.flexbox-container')
 let input = document.querySelector('#pokemonName')
 
 // Event Listeners
+// click search button
 document.querySelector('#search').addEventListener('click', renderPokemon)
 
 // enter key to searchbar
@@ -21,7 +22,7 @@ function capFirstLetter(string){
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-// fetch: GET
+// fetch: GET & create card
 function renderPokemon(e) {
     const name = input.value
     const pokemonName = lowerCaseName(name)
@@ -34,7 +35,7 @@ function renderPokemon(e) {
     <div class="flexbox-item flexbox-item-1">
     <div class="column-one">
         <h2>${capFirstLetter(data.name)}</h2> 
-        <img id="pokeImage" src="${data.sprites.other["official-artwork"].front_default}">
+        <img id="pokeImage" src="${data.sprites.other["home"].front_default}">
     </div>
     
     <div class="column-two">
@@ -44,7 +45,7 @@ function renderPokemon(e) {
         <p>Weight: ${data.weight} lbs</p>
         <p>Type: ${capFirstLetter(data.types[0].type.name)}</p>
         <p>Base Stat: ${data.base_experience}</p>
-        <p>Moves: ${capFirstLetter(data.moves[0].move.name)} & ${capFirstLetter(data.moves[1].move.name)}</p>
+        <p>Best Move: ${capFirstLetter(data.moves[1].move.name)}</p>
     </div>
 
     <div class="column-three">
@@ -54,26 +55,30 @@ function renderPokemon(e) {
         <p>Special-Attack: ${data.stats[3].base_stat}</p>
         <p>Special-Defense: ${data.stats[4].base_stat}</p>
         <p>Speed: ${data.stats[5].base_stat}</p>
-        <p>Ability: ${capFirstLetter(data.abilities[0].ability.name)} & ${capFirstLetter(data.abilities[1].ability.name)}</p>
+        <p>Ability: ${capFirstLetter(data.abilities[0].ability.name)}</p>
     </div>
     `
+    document.querySelector('.flexbox-container2').innerHTML = `
+        <div class="Bottom">
+        </div>
+        <h4>Hover over the image to change into it's shiny form ✨</h4>
+        </div>
+    `
+
+    // event listener mouse over/out    
+    container.addEventListener('mouseover', () => {
+        document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
+    });
+    
+    container.addEventListener('mouseout', () => {
+        document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
+    }); 
      })
+     
      .catch((error) => {
         console.log("Pokemon Not Found", error)
     })
 
+
     // e.preventDefault()
 }
-
-// document.getElementById('pokeImage').addEventListener('mouseover', (e) => {
-//     const target = e
-//     console.log('hello:', target)
-// });
-
-// document.getElementById('theimage').addEventListener('mouseout', () => {
-//     document.getElementById('theimage').src="/images/wartortle.jpeg"
-// });
-
-// document.querySelector('h2').addEventListener('mouseover', () => {
-//     console.log('hello')
-// });
