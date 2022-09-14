@@ -70,6 +70,10 @@ function renderPokemon(e) {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
     });
     
+    // remove welcome card
+    const contain = document.querySelector('.welcome-card')
+    contain.remove()
+
     container.addEventListener('mouseout', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
     }); 

@@ -11,7 +11,7 @@
     min-height: auto;
     text-align: center;
     background: rgb(52,52,52);
-    height: 344px;
+    height: 960px;
 }
 
 .left-column::after {
@@ -45,12 +45,11 @@
     font-size: 12px;
     font-weight: 100;
     color: white;
-
 }
 
 .searchBox {
     width: 90%;
-    padding: 5%;
+    padding-top: 20%;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -87,11 +86,13 @@
 
 #search{
     border: 0;
-    border-radius: 20%;
+    border-radius: 0px 10% 10% 0px;
     width: 36px;
     height: 36px;
     background: #E4E5EA;
     cursor: pointer;
+    margin: -10px;
+    background-color: #2a75bb;
 }
 
 /* Right Column */
@@ -107,6 +108,16 @@
     content: "";
     display: table;
     clear: both;
+}
+
+.welcome-card {
+    box-shadow: 5px 5px 15px 5px rgb(52 52 52);
+    width: 40%;
+    align-content: center;
+}
+
+#gengar {
+    width: 180px;
 }
 
 /* Flex Box for the Pokemon cards*/
