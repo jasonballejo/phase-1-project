@@ -4,7 +4,7 @@ PokeDatabase is a library with specific Pokemon attributes for battling in the w
 
 ## Installation
 
-Access the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151) to start searching types of Pokemon.
+Access the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151) to start searching types of Pokemon within the app.
 
 ## Usage
 
@@ -14,12 +14,12 @@ Access the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151) to st
 4. When ready to view another Pokemon, simply search another one.
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+For major changes, please open an issue first to discuss what you would like to change or add!
 
 Please make sure to update tests as appropriate.
 
 Fonts added on the page are credited to Google Fonts.
-Credit Pokemon API + artworks from 'https://pokeapi.co/'.
+Credit Pokemon API + artworks from https://pokeapi.co/.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
