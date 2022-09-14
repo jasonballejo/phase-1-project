@@ -69,19 +69,17 @@ function renderPokemon(e) {
     container.addEventListener('mouseover', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
     });
-    
-    // remove welcome card
-    const contain = document.querySelector('.welcome-card')
-    contain.remove()
 
     container.addEventListener('mouseout', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
-    }); 
-     })
+    });
+
+    // // remove welcome card
+    // const contain = document.querySelector('.welcome-card')
+    // contain.remove() 
+    })
      
      .catch((error) => {
         console.log("Pokemon Not Found", error)
     })
-
-    // e.preventDefault()
 }

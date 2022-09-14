@@ -8,10 +8,9 @@
     float: left;
     width: 25%;
     padding: 13px;
-    min-height: auto;
+    min-height: 100vh;
     text-align: center;
     background: rgb(52,52,52);
-    height: 960px;
 }
 
 .left-column::after {
@@ -57,31 +56,34 @@
     justify-content: center;
 }
 
-#pokemonName input {
+input {
     background: transparent;
     flex: 1;
-    border: 0;
+    border: none;
     outline: none;
     padding: 16px;
     font-size: 18px;
-    color: #977900;
+    color: #000000;
 }
 
 #pokemonName {
     width: 200px;
     height: 36px;
-    max-width: 700px;
+    max-width: 200px;
     background: #E4E5EA;
     display: flex;
     align-items: center;
     border-radius: 10px;
     padding: 5px 15px;
+    border: 0;
     /* margin-top: 60px; */
     /* margin-left: 40px; */
 }
 
 ::placeholder{
-    color: #ffcb05;
+    color: #2a75bb;
+    font-weight: 500;
+    border: 0;
 }
 
 #search{
@@ -112,12 +114,40 @@
 
 .welcome-card {
     box-shadow: 5px 5px 15px 5px rgb(52 52 52);
-    width: 40%;
-    align-content: center;
+    width: 680px;
+    display: flex;
+    padding: 15px;
+    margin-left: 50px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.left {
+    display: flex;
 }
 
 #gengar {
     width: 180px;
+    float: left;
+}
+
+.right {
+    width: 280px;
+}
+
+.right h1 {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.right p {
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 /* Flex Box for the Pokemon cards*/
@@ -128,7 +158,7 @@
 
 .flexbox-item {
     width: 200px;
-    margin: 10px;
+    margin: auto;
     border: 3px solid black;
     background-color: white;
 }
@@ -199,17 +229,32 @@
 }
 
 .flexbox-container2 h4 {
-    padding-right: 30%;
+    /* padding-right: 30%; */
     font-size: 14px;
     font-family: 'Fira Sans', sans-serif;
     font-weight: 500;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px) {
     .left-column {
         width: 100%;
+        min-height: 20vh;
     }
     .right-column {
+        width: 105%;
+    }
+    .welcome-card {
+        width: 85%;
+        justify-content: center;
+        text-align: center;
+    }
+    .flexbox-container {
         width: 100%;
     }
+    .flexbox-container2 {
+        width: 100%;
+    }
+
 }
