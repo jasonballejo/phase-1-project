@@ -1,38 +1,25 @@
 # PokeDatabase
 
-PokeDatabase is a library of specific Pokemon attributes for battling in the wild or in tournaments. This database is to help improve and become victories.
+PokeDatabase is a library with specific Pokemon attributes for battling in the wild or in tournaments. This will help you improve your strategies based off Pokemon stats.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+Access the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151) to start searching types of Pokemon.
 
 ## Usage
 
-```javascript
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+1. Search the Pokemon name in the search box.
+2. The Pokemon chosen will appear and you can view the stats of that Pokemon.
+3. Hover over the image for you to see the shiny version of it ✨
+4. When ready to view another Pokemon, simply search another one.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-Pokemon artwork credits to 'https://pokemondb.net/'.
-Fonts added on the page credited to Google Fonts.
-Pokemon API from 'https://pokeapi.co/'.
+Fonts added on the page are credited to Google Fonts.
+Credit Pokemon API + artworks from 'https://pokeapi.co/'.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

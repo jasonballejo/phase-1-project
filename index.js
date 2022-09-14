@@ -79,6 +79,5 @@ function renderPokemon(e) {
         console.log("Pokemon Not Found", error)
     })
 
-
     // e.preventDefault()
 }
