@@ -3,10 +3,10 @@ let container = document.querySelector('.flexbox-container')
 let input = document.querySelector('#pokemonName')
 
 // Event Listeners
-// click search button
+// click search button for result
 document.querySelector('#search').addEventListener('click', renderPokemon)
 
-// enter key to searchbar
+// enter key to search bar
 input.addEventListener('keyup', (e) => {
     if(e.keyCode === 13) {
         return renderPokemon(e.target.value)
@@ -64,7 +64,7 @@ function renderPokemon(e) {
         <h4>Hover over the image to change into it's shiny form ✨</h4>
         </div> 
     `
-    // event listener mouse over/out    
+    // event listener mouse over/out on image   
     container.addEventListener('mouseover', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
     });
