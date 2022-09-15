@@ -30,7 +30,7 @@ function renderPokemon(e) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
      .then(response => response.json())
      .then((data) => {
-        document.querySelector('.flexbox-container').innerHTML = `
+        document.querySelector('.flexbox-container').innerHTML = ` 
     
     <div class="flexbox-item flexbox-item-1">
     <div class="column-one">
@@ -62,17 +62,15 @@ function renderPokemon(e) {
         <div class="Bottom">
         </div>
         <h4>Hover over the image to change into it's shiny form ✨</h4>
-        </div>
+        </div> 
     `
     // event listener mouse over/out    
     container.addEventListener('mouseover', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
     });
-
     container.addEventListener('mouseout', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
     });
-
     })
      .catch((error) => {
         console.log("Pokemon Not Found", error)
