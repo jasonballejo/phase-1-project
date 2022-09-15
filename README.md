@@ -4,7 +4,7 @@ PokeDatabase is a library with specific Pokemon attributes for battling in the w
 
 ## Installation
 
-Access the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151) to start searching types of Pokemon within the app.
+Accessing the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151), to start simply search the Pokemon within the app.
 
 ## Usage
 

@@ -64,7 +64,6 @@ function renderPokemon(e) {
         <h4>Hover over the image to change into it's shiny form ✨</h4>
         </div>
     `
-
     // event listener mouse over/out    
     container.addEventListener('mouseover', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_shiny}`
@@ -74,11 +73,7 @@ function renderPokemon(e) {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
     });
 
-    // // remove welcome card
-    // const contain = document.querySelector('.welcome-card')
-    // contain.remove() 
     })
-     
      .catch((error) => {
         console.log("Pokemon Not Found", error)
     })
