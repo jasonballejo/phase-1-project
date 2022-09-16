@@ -153,7 +153,7 @@ input {
 /* Flex Box for the Pokemon cards*/
 .flexbox-container {
     display: flex;
-    padding: 40px;
+    padding: 80px 40px 40px 40px;
 }
 
 .flexbox-item {
