@@ -62,8 +62,8 @@ function renderPokemon(e) {
         <p>HP: ${data.stats[0].base_stat}</p>                 
         <p>Attack: ${data.stats[1].base_stat}</p>
         <p>Defense: ${data.stats[2].base_stat}</p>
-        <p>Special-Attack: ${data.stats[3].base_stat}</p>
-        <p>Special-Defense: ${data.stats[4].base_stat}</p>
+        <p>Special Attack: ${data.stats[3].base_stat}</p>
+        <p>Special Defense: ${data.stats[4].base_stat}</p>
         <p>Speed: ${data.stats[5].base_stat}</p>
         <p>Ability: ${capFirstLetter(data.abilities[0].ability.name)}</p>
     </div>
