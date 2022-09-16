@@ -2,6 +2,16 @@ const pokeURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 let container = document.querySelector('.flexbox-container')
 let input = document.querySelector('#pokemonName')
 
+function iterate () {
+    fetch(pokeURL)
+    .then(res => res.json())
+    .then((data) => data.results.forEach(pokemon => {
+        fetch(pokemon.url)
+        .then(res => res.json())
+        .then((data) => console.log(data))
+    }))
+}
+
 // Event Listeners
 // click search button for result
 document.querySelector('#search').addEventListener('click', renderPokemon)
@@ -21,14 +31,6 @@ function lowerCaseName(string) {
 function capFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
-
-function renderr() {
-    fetch(pokeURL)
-    .then(res => res.json())
-    .then((data) => data.forEach(pokemons => console.log(pokemons)))
-}
-
-renderr()
 
 // fetch: GET & create card
 function renderPokemon(e) {
