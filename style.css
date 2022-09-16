@@ -39,7 +39,7 @@
 }
 
 .left-column h4 {
-    margin-top: 20%;
+    margin-top: 64vh;
     font-family: 'Fira Sans', sans-serif;
     font-size: 12px;
     font-weight: 100;
@@ -47,7 +47,7 @@
 }
 
 .searchBox {
-    width: 90%;
+    width: 100%;
     padding-top: 20%;
     background-position: center;
     background-size: cover;
@@ -154,7 +154,7 @@ input {
 /* Flex Box for the Pokemon cards*/
 .flexbox-container {
     display: flex;
-    padding: 80px 40px 40px 40px;
+    padding: 120px 40px 40px 40px;
 }
 
 .flexbox-item {

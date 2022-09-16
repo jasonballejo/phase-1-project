@@ -2,7 +2,7 @@ const pokeURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 let container = document.querySelector('.flexbox-container')
 let input = document.querySelector('#pokemonName')
 
-function iterate () {
+function fetching () {
     fetch(pokeURL)
     .then(res => res.json())
     .then((data) => data.results.forEach(pokemon => {
@@ -81,6 +81,7 @@ function renderPokemon(e) {
     container.addEventListener('mouseout', () => {
         document.getElementById('pokeImage').src=`${data.sprites.other["home"].front_default}`
     });
+
     })
      .catch((error) => {
         console.log("Pokemon Not Found", error)
