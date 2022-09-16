@@ -14,13 +14,21 @@ input.addEventListener('keyup', (e) => {
 })
 
 // Update word cases
-function lowerCaseName(string){
+function lowerCaseName(string) {
     return string.toLowerCase()
 }
 
-function capFirstLetter(string){
+function capFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
+
+function renderr() {
+    fetch(pokeURL)
+    .then(res => res.json())
+    .then((data) => data.forEach(pokemons => console.log(pokemons)))
+}
+
+renderr()
 
 // fetch: GET & create card
 function renderPokemon(e) {
