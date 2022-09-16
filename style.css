@@ -122,6 +122,7 @@ input {
     margin: auto;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(circle at 75% 0%, #7D78A3 36%, #ffffff 36%);
 }
 .left {
     display: flex;
