@@ -8,7 +8,7 @@ Accessing the URL [PokeDatabase](https://pokeapi.co/api/v2/pokemon?limit=151), t
 
 ## Usage
 
-1. Start by searching the Pokemon name in the search box.
+1. Start by searching the Pokemon name in the search box on the left. (Hit enter or click the search button)
 2. The Pokemon chosen will appear and you can view the stats of that Pokemon.
 3. Hover over the image for you to see the shiny version of it ✨
 4. When ready to view another Pokemon, simply search another one.
