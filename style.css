@@ -146,9 +146,10 @@ input {
     font-family: 'Fira Sans', sans-serif;
 }
 
-.right p {
+.right h5 {
     font-size: 14px;
     font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
 }
 
 /* Flex Box for the Pokemon cards*/
@@ -173,6 +174,7 @@ input {
     width: 680px;
     min-height: 50px;
     column-gap: 32px;
+    display: none;
 }
 
 .column-one {
@@ -227,6 +229,10 @@ input {
     margin-bottom: 10px;
     text-align: left;
     margin-top: 11px;
+}
+
+.flexbox-container2 {
+    display: none;
 }
 
 .flexbox-container2 h4 {

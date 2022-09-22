@@ -1,12 +1,9 @@
 const pokeURL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 let container = document.querySelector('.flexbox-container')
+const column1 = document.querySelector('.column-one')
 const column2 = document.querySelector('.column-two')
 const column3 = document.querySelector('.column-three')
 let input = document.querySelector('#pokemonName')
-
-function nodeCleanUp (parentNode) {
-   debugger
-}
 
 // Event Listeners
 // click search button for result
@@ -40,7 +37,11 @@ function renderPokemon(e) {
      .then(response => response.json())
      .then((data) => {
         document.querySelectorAll('p').forEach(node => node.remove())
-        document.querySelector('.welcome-card').remove()
+        document.querySelector('.flexbox-item-1').style.display = "flex"
+        document.querySelector('.flexbox-container2').style.display = "contents"
+        document.querySelector('.welcome-card').style.display = "none"
+
+
         const column2_data = ['id', 'height', 'weight', 'base_experience', 'moves']
 
         Object.entries(data).forEach(pokeKeyValue => { 
