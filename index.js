@@ -71,10 +71,10 @@ function renderPokemon(e) {
       })
 
     // event listener mouse over/out on image   
-    container.addEventListener('mouseover', () => {
+    document.getElementById('pokeImage').addEventListener('mouseover', () => {
         document.getElementById('pokeImage').src=`${imageShiny}`
     });
-    container.addEventListener('mouseout', () => {
+    document.getElementById('pokeImage').addEventListener('mouseout', () => {
         document.getElementById('pokeImage').src=`${imageMain}`
     });
 
