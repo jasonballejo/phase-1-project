@@ -32,7 +32,6 @@ function renderPokemon(e) {
     let imageMain
     let imageShiny
 
-
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
      .then(response => response.json())
      .then((data) => {
@@ -41,11 +40,10 @@ function renderPokemon(e) {
         document.querySelector('.flexbox-container2').style.display = "contents"
         document.querySelector('.welcome-card').style.display = "none"
 
-
         const column2_data = ['id', 'height', 'weight', 'base_experience', 'moves']
 
         Object.entries(data).forEach(pokeKeyValue => { 
-        console.log(pokeKeyValue) // pokemon key and value pairs in an array['abilities', Array(1)]
+        // console.log(pokeKeyValue) // pokemon key and value pairs in an array['abilities', Array(1)]
         const p = document.createElement('p')
 
         if(pokeKeyValue[0] === "name"){  // check to apend to column one
